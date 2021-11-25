@@ -11,8 +11,9 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import { faFacebookF } from '@fortawesome/free-brands-svg-icons'
 import { faTwitter } from '@fortawesome/free-brands-svg-icons'
 import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 
-library.add(faClock, faPhoneAlt, faEnvelope, faFacebookF, faTwitter, faLinkedinIn)
+library.add(faClock, faPhoneAlt, faEnvelope, faFacebookF, faTwitter, faLinkedinIn, faChevronDown)
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 

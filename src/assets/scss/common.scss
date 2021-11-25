@@ -20,11 +20,30 @@ body {
 
 .container {
     /* width: 1560px; */
-    width: 70%;
+    width: 60%;
     margin: auto;
 }
 
 .d_flex {
     display: flex;
     align-items: center;
+}
+
+.btn_green,
+.btn_green_outline {
+    display: inline-block;
+    padding: 0.7rem 1.5rem;
+    border-radius: 5px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.btn_green {
+    background-color: $nexgen_primary_green;
+    color: #fff;
+}
+
+.btn_green_outline {
+    border: 1px solid $nexgen_primary_green;
+    color: $nexgen_primary_green;
 }

@@ -47,11 +47,32 @@
             <li><a href="">process</a></li>
             <li><a href="">team</a></li>
             <li><a href="">blog</a></li>
-            <li class="btn_green"><a href="">get in touch</a></li>
+            <li class="btn_green">get in touch</li>
           </ul>
         </div>
       </div>
       <!-- /.navbar -->
+
+      <div class="consulting">
+        <p class="fusions">Fusions & acquisitions</p>
+        <h2>Insurance Consulting</h2>
+        <div class="d_flex">
+          <div class="box">Name</div>
+          <div class="box">Email</div>
+        </div>
+        <div class="d_flex">
+          <div class="box">Phone</div>
+          <div class="box more_info">
+            More Info
+            <font-awesome-icon :icon="['fas', 'chevron-down']" class="icon" />
+          </div>
+        </div>
+        <div class="btn d_flex">
+          <div class="btn_green">get in touch</div>
+          <div class="btn_green_outline">read more</div>
+        </div>
+      </div>
+      <!-- /.consulting -->
     </div>
     <!-- /.bottom_header -->
   </header>
@@ -66,6 +87,8 @@ export default {};
 @import "../assets/scss/variables.scss";
 
 header {
+  background-image: url(../assets/img/bg-6.jpg);
+
   .top_header {
     background-color: $nexgen_dark_blue;
     color: $nexgen_text_header;
@@ -95,8 +118,6 @@ header {
   }
 
   .bottom_header {
-    background-image: url(../assets/img/bg-6.jpg);
-
     .navbar {
       justify-content: space-between;
       text-transform: uppercase;
@@ -127,13 +148,47 @@ header {
           text-decoration: none;
           color: $nexgen_text_dark;
         }
+      }
+    }
 
-        &.btn_green > a {
-          background-color: $nexgen_primary_green;
-          padding: 0.7rem 1.2rem;
-          border-radius: 5px;
-          color: #fff;
-        }
+    .consulting {
+      width: 50%;
+      margin-left: auto;
+      margin-top: 150px;
+      padding: 0 6rem 220px 3rem;
+
+      .fusions {
+        font-size: 1.1rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        color: #0daaaa;
+      }
+
+      h2 {
+        font-size: 4.5rem;
+        font-weight: 900;
+        color: $nexgen_text_dark;
+        line-height: 5.5rem;
+        margin: 0.5rem 0 1.5rem 0;
+      }
+
+      .box {
+        background-color: #cdd1d3;
+        padding: 0.8rem;
+        border-radius: 5px;
+        width: 245px;
+        margin: 0 1rem 1rem 0;
+        color: #8e98a2;
+      }
+
+      .more_info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .btn_green {
+        margin-right: 1rem;
       }
     }
   }
