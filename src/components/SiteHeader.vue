@@ -4,17 +4,17 @@
       <div class="container d_flex">
         <div class="left d_flex">
           <font-awesome-icon :icon="['fas', 'clock']" class="icon" />
-          <p>Open Hours: Mon - Sat - 9.00 - 18.00</p>
+          <p>Open Hours: {{ days }} - {{ hours }}</p>
         </div>
         <!-- /.left -->
         <div class="right d_flex">
           <p class="phone d_flex">
             <font-awesome-icon :icon="['fas', 'phone-alt']" class="icon" />
-            +1 (305) 1234-5678
+            {{ phone }}
           </p>
           <p class="email d_flex">
             <font-awesome-icon :icon="['fas', 'envelope']" class="icon" />
-            hello@example.com
+            {{ email }}
           </p>
           <p>
             <font-awesome-icon
@@ -41,12 +41,9 @@
         </div>
         <div class="menu">
           <ul>
-            <li><a href="">home</a></li>
-            <li><a href="">about</a></li>
-            <li><a href="">services</a></li>
-            <li><a href="">process</a></li>
-            <li><a href="">team</a></li>
-            <li><a href="">blog</a></li>
+            <li v-for="(link, i) in navbarLink" :key="i">
+              <a href="">{{ link }}</a>
+            </li>
             <li class="btn_green">get in touch</li>
           </ul>
         </div>
@@ -80,7 +77,17 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      days: "Mon - Sat",
+      hours: "9.00 - 18.00",
+      phone: "+1 (305) 1234-5678",
+      email: "hello@example.com",
+      navbarLink: ["home", "about", "services", "process", "team", "blog"],
+    };
+  },
+};
 </script>
 
 <style lang="scss">
