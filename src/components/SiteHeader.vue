@@ -62,7 +62,7 @@
         </div>
         <div class="d_flex">
           <div class="box">Phone</div>
-          <div class="box more_info">
+          <div class="box d_flex">
             More Info
             <font-awesome-icon :icon="['fas', 'chevron-down']" class="icon" />
           </div>
@@ -97,8 +97,6 @@ header {
     padding: 0.9rem 0;
 
     .container {
-      justify-content: space-between;
-
       .left > p {
         margin-left: 0.5rem;
       }
@@ -119,7 +117,6 @@ header {
 
   .bottom_header {
     .navbar {
-      justify-content: space-between;
       text-transform: uppercase;
       padding: 2rem 0;
 
@@ -164,27 +161,21 @@ header {
         color: #0daaaa;
       }
 
-      h2 {
-        font-size: 4.5rem;
-        font-weight: 900;
-        color: $nexgen_text_dark;
-        line-height: 5.5rem;
-        margin: 0.5rem 0 1.5rem 0;
+      .d_flex {
+        justify-content: flex-start;
+
+        .box {
+          background-color: #cdd1d3;
+          padding: 0.8rem;
+          border-radius: 5px;
+          width: 245px;
+          margin: 0 1rem 1rem 0;
+          color: #8e98a2;
+        }
       }
 
-      .box {
-        background-color: #cdd1d3;
-        padding: 0.8rem;
-        border-radius: 5px;
-        width: 245px;
-        margin: 0 1rem 1rem 0;
-        color: #8e98a2;
-      }
-
-      .more_info {
-        display: flex;
+      .box.d_flex {
         justify-content: space-between;
-        align-items: center;
       }
 
       .btn_green {
