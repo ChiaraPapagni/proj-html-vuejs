@@ -18,6 +18,31 @@ body {
     font-weight: 400;
 }
 
+h2 {
+    font-size: 4.5rem;
+    font-weight: 900;
+    color: $nexgen_text_dark;
+    line-height: 5.5rem;
+    margin: 0.5rem 0 1.5rem 0;
+}
+
+h3 {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 5.5rem;
+    margin: 1rem 0;
+}
+
+h4 {
+    font-size: 1.7rem;
+    font-weight: 700;
+}
+
+h5 {
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
 .container {
     /* width: 1560px; */
     width: 60%;
@@ -26,6 +51,7 @@ body {
 
 .d_flex {
     display: flex;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -34,6 +60,7 @@ body {
     display: inline-block;
     padding: 0.7rem 1.5rem;
     border-radius: 5px;
+    font-size: 1.1rem;
     text-transform: uppercase;
     cursor: pointer;
 }
@@ -46,4 +73,20 @@ body {
 .btn_green_outline {
     border: 1px solid $nexgen_primary_green;
     color: $nexgen_primary_green;
+}
+
+.col {
+    width: 50%;
+}
+
+.title {
+    color: #00A6A6;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.title_bg {
+    border-radius: 5px;
+    padding: 0 0.8rem;
 }
