@@ -1,0 +1,17 @@
+/* Reset Rules */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    /* width: 1560px; */
+    width: 70%;
+    margin: auto;
+}
+
+.d_flex {
+    display: flex;
+    align-items: center;
+}
