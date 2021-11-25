@@ -17,8 +17,9 @@ import { faUnlockAlt } from '@fortawesome/free-solid-svg-icons'
 import { faGraduationCap } from '@fortawesome/free-solid-svg-icons'
 import { faMedal } from '@fortawesome/free-solid-svg-icons'
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
+import { faQuoteRight } from '@fortawesome/free-solid-svg-icons'
 
-library.add(faClock, faPhoneAlt, faEnvelope, faFacebookF, faTwitter, faLinkedinIn, faChevronDown, faEdit, faUnlockAlt, faGraduationCap, faMedal, faArrowRight)
+library.add(faClock, faPhoneAlt, faEnvelope, faFacebookF, faTwitter, faLinkedinIn, faChevronDown, faEdit, faUnlockAlt, faGraduationCap, faMedal, faArrowRight, faQuoteRight)
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
