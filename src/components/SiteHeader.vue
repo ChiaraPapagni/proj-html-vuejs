@@ -95,6 +95,7 @@ export default {
 
 header {
   background-image: url(../assets/img/bg-6.jpg);
+  background-position-y: center;
 
   .top_header {
     background-color: $nexgen_dark_blue;
