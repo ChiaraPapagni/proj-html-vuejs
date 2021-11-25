@@ -57,7 +57,7 @@
     <Services />
     <!-- /.services -->
 
-    <div class="management"></div>
+    <Management />
     <!-- /.management -->
 
     <div class="team"></div>
@@ -74,9 +74,12 @@
 
 <script>
 import Services from "./Services.vue";
+import Management from "./Management.vue";
+
 export default {
   components: {
     Services,
+    Management,
   },
 };
 </script>
