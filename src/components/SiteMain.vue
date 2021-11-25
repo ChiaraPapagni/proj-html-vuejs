@@ -63,10 +63,17 @@
     <Team />
     <!-- /.team -->
 
-    <div class="news"></div>
+    <News />
     <!-- /.news -->
 
-    <div class="newsletter"></div>
+    <div class="newsletter">
+      <div class="title">Newsletter</div>
+      <h3><span class="title_bg">Know</span> First</h3>
+      <p>
+        Follow closely and receive content about our company and the news of the
+        current market.
+      </p>
+    </div>
     <!-- /.newsletter -->
   </main>
   <!-- /#site_main -->
@@ -76,12 +83,14 @@
 import Services from "./Services.vue";
 import Management from "./Management.vue";
 import Team from "./Team.vue";
+import News from "./News.vue";
 
 export default {
   components: {
     Services,
     Management,
     Team,
+    News,
   },
 };
 </script>
@@ -120,6 +129,23 @@ main {
 
       h4 {
         color: white;
+      }
+    }
+  }
+
+  .newsletter {
+    background-image: url("../assets/img/bg-1.jpg");
+    background-position-y: center;
+    object-position: center;
+    padding: 120px 0;
+    color: #ccc;
+    font-weight: 300;
+
+    h3 {
+      color: white;
+
+      .title_bg {
+        background-color: #173338;
       }
     }
   }
