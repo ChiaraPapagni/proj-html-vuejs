@@ -41,8 +41,10 @@
         </div>
         <div class="menu">
           <ul>
-            <li v-for="(link, i) in navbarLink" :key="i">
-              <a href="">{{ link }}</a>
+            <li v-for="(page, i) in pages" :key="i">
+              <a href="" :class="page.active ? 'active' : ''">{{
+                page.name
+              }}</a>
             </li>
             <li class="btn_green">get in touch</li>
           </ul>
@@ -84,7 +86,32 @@ export default {
       hours: "9.00 - 18.00",
       phone: "+1 (305) 1234-5678",
       email: "hello@example.com",
-      navbarLink: ["home", "about", "services", "process", "team", "blog"],
+      pages: [
+        {
+          name: "home",
+          active: true,
+        },
+        {
+          name: "about",
+          active: false,
+        },
+        {
+          name: "services",
+          active: false,
+        },
+        {
+          name: "process",
+          active: false,
+        },
+        {
+          name: "team",
+          active: false,
+        },
+        {
+          name: "blog",
+          active: false,
+        },
+      ],
     };
   },
 };
@@ -148,6 +175,11 @@ header {
         list-style: none;
         margin-left: 2rem;
 
+        .active {
+          color: $nexgen_primary_green;
+          border-bottom: 2px solid $nexgen_primary_green;
+        }
+
         a {
           font-size: 1.1rem;
           text-decoration: none;
@@ -160,7 +192,7 @@ header {
       width: 50%;
       margin-left: auto;
       margin-top: 150px;
-      padding: 0 6rem 220px 3rem;
+      padding: 0 6rem 200px 3rem;
 
       .fusions {
         font-size: 1.1rem;
