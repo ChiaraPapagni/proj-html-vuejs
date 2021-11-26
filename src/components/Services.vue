@@ -11,11 +11,12 @@
         </p>
         <div class="btn_green">See all</div>
       </div>
+
       <div class="cards">
         <div class="d_flex">
           <div class="card col_3">
             <div class="card_header d_flex">
-              <font-awesome-icon :icon="['far', 'edit']" class="icon" />
+              <img src="../assets/img/audit.png" />
               <font-awesome-icon
                 :icon="['fas', 'arrow-right']"
                 class="icon arrow_right"
@@ -25,9 +26,10 @@
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
           </div>
           <!-- /.card -->
+
           <div class="card col_3">
             <div class="card_header d_flex">
-              <font-awesome-icon :icon="['far', 'edit']" class="icon" />
+              <img src="../assets/img/financial.png" />
               <font-awesome-icon
                 :icon="['fas', 'arrow-right']"
                 class="icon arrow_right"
@@ -37,9 +39,10 @@
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
           </div>
           <!-- /.card -->
+
           <div class="card col_3">
             <div class="card_header d_flex">
-              <font-awesome-icon :icon="['far', 'edit']" class="icon" />
+              <img src="../assets/img/analytics.png" />
               <font-awesome-icon
                 :icon="['fas', 'arrow-right']"
                 class="icon arrow_right"
@@ -54,7 +57,7 @@
         <div class="d_flex">
           <div class="card col_3">
             <div class="card_header d_flex">
-              <font-awesome-icon :icon="['far', 'edit']" class="icon" />
+              <img src="../assets/img/middle.png" />
               <font-awesome-icon
                 :icon="['fas', 'arrow-right']"
                 class="icon arrow_right"
@@ -64,9 +67,10 @@
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
           </div>
           <!-- /.card -->
+
           <div class="card col_3">
             <div class="card_header d_flex">
-              <font-awesome-icon :icon="['far', 'edit']" class="icon" />
+              <img src="../assets/img/legal.png" />
               <font-awesome-icon
                 :icon="['fas', 'arrow-right']"
                 class="icon arrow_right"
@@ -76,9 +80,10 @@
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
           </div>
           <!-- /.card -->
+
           <div class="card col_3">
             <div class="card_header d_flex">
-              <font-awesome-icon :icon="['far', 'edit']" class="icon" />
+              <img src="../assets/img/risk.png" />
               <font-awesome-icon
                 :icon="['fas', 'arrow-right']"
                 class="icon arrow_right"
@@ -147,7 +152,7 @@ export default {};
 
         h5 {
           color: $nexgen_dark_blue;
-          margin: 1rem 0;
+          margin: 1.3rem 0;
         }
       }
     }
