@@ -112,9 +112,9 @@ export default {
 
 main {
   .company {
-    background-color: $nexgen_bg_dark;
+    background-color: $nexgen_primary_dark;
     padding: 120px 0;
-    color: #ccc;
+    color: $nexgen_light_grey_text;
     font-weight: 300;
 
     .container {
@@ -122,11 +122,11 @@ main {
       gap: 6.5rem;
 
       h3 {
-        color: white;
+        color: $nexgen_white;
       }
 
       .title_bg {
-        background-color: #0e272d;
+        background-color: rgba($nexgen_primary_green, 0.2);
       }
 
       p {
@@ -134,13 +134,13 @@ main {
       }
 
       .icon {
-        color: #00a6a6;
+        color: $nexgen_primary_green;
         font-size: 1.4rem;
         margin-right: 0.5rem;
       }
 
       h4 {
-        color: white;
+        color: $nexgen_white;
       }
     }
   }
@@ -150,7 +150,7 @@ main {
     background-position-y: center;
     object-position: center;
     padding: 120px 0;
-    color: #ccc;
+    color: $nexgen_light_grey_text;
     font-weight: 300;
 
     & > .d_flex {
@@ -161,10 +161,10 @@ main {
 
     .know {
       h3 {
-        color: white;
+        color: $nexgen_white;
 
         .title_bg {
-          background-color: #173338;
+          background-color: rgba($nexgen_primary_green, 0.2);
         }
       }
     }

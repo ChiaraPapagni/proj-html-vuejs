@@ -42,7 +42,7 @@
         <div class="menu">
           <ul>
             <li v-for="(page, i) in pages" :key="i">
-              <a href="" :class="page.active ? 'active' : ''" class="underline">
+              <a href="" class="underline">
                 <span>{{ page.name }}</span>
               </a>
             </li>
@@ -61,12 +61,16 @@
         </div>
         <div class="form d_flex">
           <input type="tel" placeholder="Phone" class="input" />
-          <div class="input">
-            <p class="d_flex more_info">
-              <span>More Info</span>
-              <font-awesome-icon :icon="['fas', 'chevron-down']" class="icon" />
-            </p>
-          </div>
+          <select name="info" class="input">
+            <option value selected disabled>More Info</option>
+            <option>Audit & Assurance</option>
+            <option>Financial Advisory</option>
+            <option>Analytics and M&A</option>
+            <option>Middle Marketing</option>
+            <option>Legal Consulting</option>
+            <option>Regulatory Risk</option>
+            <option>Other</option>
+          </select>
         </div>
         <!-- /.form -->
 
@@ -94,27 +98,21 @@ export default {
       pages: [
         {
           name: "home",
-          active: true,
         },
         {
           name: "about",
-          active: false,
         },
         {
           name: "services",
-          active: false,
         },
         {
           name: "process",
-          active: false,
         },
         {
           name: "team",
-          active: false,
         },
         {
           name: "blog",
-          active: false,
         },
       ],
     };
@@ -130,15 +128,24 @@ header {
   background-position-y: center;
 
   .top_header {
-    background-color: $nexgen_dark_blue;
-    color: $nexgen_text_header;
+    background-color: $nexgen_primary_blue;
+    color: $nexgen_light_grey_text;
     font-size: 0.9rem;
     font-weight: 300;
     padding: 0.9rem 0;
 
     .container {
-      .left > p {
-        margin-left: 0.5rem;
+      .left {
+        transition: 0.1s linear;
+
+        p {
+          margin-left: 0.5rem;
+        }
+
+        &:hover {
+          color: $nexgen_primary_green;
+          cursor: pointer;
+        }
       }
 
       .right {
@@ -151,13 +158,18 @@ header {
         }
 
         .social_icon {
-          transition: 0.1s linear;
           margin-left: 2rem;
-          cursor: pointer;
         }
-        .social_icon:hover {
-          filter: brightness(1.3);
-          font-size: 1.1rem;
+
+        .phone,
+        .email,
+        .social_icon {
+          transition: 0.1s linear;
+          cursor: pointer;
+
+          &:hover {
+            color: $nexgen_primary_green;
+          }
         }
       }
     }
@@ -172,13 +184,13 @@ header {
         font-family: "Montserrat", sans-serif;
         font-size: 1.2rem;
         letter-spacing: 0.35rem;
-        color: $nexgen_text_dark;
+        color: $nexgen_primary_blue;
 
         .logo_bg {
-          background-color: #c0dadc;
+          background-color: rgba($nexgen_primary_green, 0.15);
           padding: 0.8rem 0 0.8rem 1.5rem;
           border-radius: 50px 0 0 50px;
-          color: #0daaaa;
+          color: $nexgen_primary_green;
           margin-right: 0.2rem;
         }
       }
@@ -188,14 +200,14 @@ header {
         list-style: none;
         margin-left: 2rem;
 
-        .active {
-          color: $nexgen_primary_green;
-        }
-
         a {
           font-size: 1.1rem;
           text-decoration: none;
-          color: $nexgen_text_dark;
+          color: $nexgen_primary_blue;
+
+          &:hover {
+            color: $nexgen_primary_green;
+          }
         }
 
         .underline {
@@ -210,7 +222,7 @@ header {
           right: 0;
           width: 0;
           height: 2px;
-          background-color: $nexgen_text_dark;
+          background-color: $nexgen_primary_green;
           transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1);
         }
 
@@ -220,10 +232,6 @@ header {
             right: auto;
             width: 100%;
           }
-        }
-
-        .active.underline::before {
-          background-color: $nexgen_primary_green;
         }
       }
     }
@@ -238,7 +246,7 @@ header {
         font-size: 1.1rem;
         font-weight: 500;
         text-transform: uppercase;
-        color: #0daaaa;
+        color: #00a6a6;
       }
 
       .form {
@@ -249,7 +257,7 @@ header {
 
         .input {
           width: 245px;
-          background-color: #cdd1d3;
+          background-color: rgba($nexgen_black, 0.1);
         }
 
         .more_info {

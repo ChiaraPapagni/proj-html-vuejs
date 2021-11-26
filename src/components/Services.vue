@@ -109,19 +109,19 @@ export default {};
 @import "../assets/scss/variables.scss";
 
 .services {
-  background-color: #eef4ed;
+  background-color: $nexgen_light_green;
   padding: 120px 0;
-  color: #7e878c;
+  color: $nexgen_grey;
   font-weight: 300;
 
   .container {
     h3 {
-      color: $nexgen_text_dark;
+      color: $nexgen_primary_blue;
     }
 
     .title_bg {
       color: $nexgen_primary_green;
-      background-color: #cce3de;
+      background-color: rgba($nexgen_primary_green, 0.15);
     }
 
     .d_flex > p {
@@ -137,17 +137,21 @@ export default {};
       }
 
       .card {
-        background-color: white;
+        transition: 0.3s linear;
+        background-color: $nexgen_white;
         border-radius: 10px;
         padding: 3rem;
 
+        &:hover {
+          transform: translateY(-7.5px);
+        }
         .icon {
           color: $nexgen_primary_green;
 
           &.arrow_right {
             transition: 0.3s linear;
             font-size: 1.5rem;
-            color: #82c1c1;
+            color: rgba($nexgen_primary_green, 0.5);
             cursor: pointer;
           }
 
@@ -158,7 +162,7 @@ export default {};
         }
 
         h5 {
-          color: $nexgen_dark_blue;
+          color: $nexgen_primary_blue;
           margin: 1.3rem 0;
         }
       }

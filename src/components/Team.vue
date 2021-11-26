@@ -130,9 +130,9 @@ export default {};
 @import "../assets/scss/variables.scss";
 
 .team {
-  background-color: $nexgen_bg_dark;
+  background-color: $nexgen_primary_dark;
   padding: 120px 0;
-  color: #ccc;
+  color: $nexgen_light_grey_text;
   font-weight: 300;
 
   & > .container > .d_flex {
@@ -143,10 +143,10 @@ export default {};
     width: 68%;
 
     h3 {
-      color: white;
+      color: $nexgen_white;
 
       .title_bg {
-        background-color: #0e272d;
+        background-color: rgba($nexgen_primary_green, 0.2);
       }
     }
 
@@ -175,7 +175,7 @@ export default {};
         margin-right: 2rem;
 
         h5 {
-          color: white;
+          color: $nexgen_white;
         }
 
         p {
@@ -192,14 +192,15 @@ export default {};
             align-items: center;
             width: 40px;
             height: 40px;
-            background-color: #0e272d;
+            background-color: rgba($nexgen_primary_green, 0.2);
             border-radius: 50%;
             color: $nexgen_primary_green;
             font-size: 1rem;
             cursor: pointer;
 
             &:hover {
-              background-color: #cce3de;
+              background-color: $nexgen_primary_green;
+              color: $nexgen_white;
             }
           }
         }
@@ -217,7 +218,7 @@ export default {};
     background-color: $nexgen_primary_green;
     border-radius: 5px;
     padding: 2rem 1.8rem 2rem 2rem;
-    color: white;
+    color: $nexgen_white;
 
     p {
       margin: 1.5rem 0;

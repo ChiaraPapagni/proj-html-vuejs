@@ -50,15 +50,15 @@ export default {};
 
 .management {
   padding: 120px 0;
-  color: #66737b;
+  color: $nexgen_grey;
   font-weight: 300;
   text-align: center;
 
   h3 {
-    color: $nexgen_text_dark;
+    color: $nexgen_primary_blue;
 
     .title_bg {
-      background-color: #daeced;
+      background-color: rgba($nexgen_primary_green, 0.15);
       color: $nexgen_primary_green;
     }
   }
@@ -70,7 +70,7 @@ export default {};
 
   .process {
     margin-top: 5rem;
-    border-top: 5px solid #daeced;
+    border-top: 5px solid rgba($nexgen_primary_green, 0.15);
 
     .process_list {
       width: 80%;
@@ -94,9 +94,22 @@ export default {};
       }
 
       h5 {
-        color: $nexgen_text_dark;
+        color: $nexgen_primary_blue;
         margin: 1rem 0;
         line-height: 1.8rem;
+      }
+
+      .information:hover,
+      .planing:hover,
+      .responsibilities:hover,
+      .formatting:hover,
+      .formalization:hover {
+        cursor: crosshair;
+
+        .number {
+          background-color: $nexgen_primary_green;
+          color: $nexgen_white;
+        }
       }
     }
   }
