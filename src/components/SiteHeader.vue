@@ -42,9 +42,9 @@
         <div class="menu">
           <ul>
             <li v-for="(page, i) in pages" :key="i">
-              <a href="" :class="page.active ? 'active' : ''">{{
-                page.name
-              }}</a>
+              <a href="" :class="page.active ? 'active' : ''" class="underline">
+                <span>{{ page.name }}</span>
+              </a>
             </li>
             <li class="btn_green">get in touch</li>
           </ul>
@@ -140,16 +140,24 @@ header {
       .left > p {
         margin-left: 0.5rem;
       }
+
       .right {
         .phone {
           margin-right: 2rem;
         }
+
         .icon {
           margin-right: 0.5rem;
         }
 
         .social_icon {
+          transition: 0.1s linear;
           margin-left: 2rem;
+          cursor: pointer;
+        }
+        .social_icon:hover {
+          filter: brightness(1.3);
+          font-size: 1.1rem;
         }
       }
     }
@@ -182,13 +190,40 @@ header {
 
         .active {
           color: $nexgen_primary_green;
-          border-bottom: 2px solid $nexgen_primary_green;
         }
 
         a {
           font-size: 1.1rem;
           text-decoration: none;
           color: $nexgen_text_dark;
+        }
+
+        .underline {
+          position: relative;
+        }
+
+        .underline::before {
+          content: "";
+          position: absolute;
+          top: 24px;
+          bottom: 0;
+          right: 0;
+          width: 0;
+          height: 2px;
+          background-color: $nexgen_text_dark;
+          transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        @media (hover: hover) and (pointer: fine) {
+          .underline:hover::before {
+            left: 0;
+            right: auto;
+            width: 100%;
+          }
+        }
+
+        .active.underline::before {
+          background-color: $nexgen_primary_green;
         }
       }
     }

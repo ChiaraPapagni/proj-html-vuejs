@@ -145,8 +145,15 @@ export default {};
           color: $nexgen_primary_green;
 
           &.arrow_right {
+            transition: 0.3s linear;
             font-size: 1.5rem;
             color: #82c1c1;
+            cursor: pointer;
+          }
+
+          &.arrow_right:hover {
+            font-size: 2rem;
+            color: $nexgen_primary_green;
           }
         }
 

@@ -56,8 +56,10 @@ h5 {
 
 .btn_green,
 .btn_green_outline {
+    transition: 0.5s ease-in-out;
     display: inline-block;
     padding: 0.6rem 1.5rem;
+    border: 1px solid transparent;
     border-radius: 5px;
     font-size: 1.1rem;
     text-transform: uppercase;
@@ -66,12 +68,25 @@ h5 {
 
 .btn_green {
     background-color: $nexgen_primary_green;
+    border: 1px solid transparent;
     color: #fff;
 }
 
 .btn_green_outline {
     border: 1px solid $nexgen_primary_green;
     color: $nexgen_primary_green;
+}
+
+.btn_green:hover {
+    background-color: transparent;
+    border: 1px solid $nexgen_primary_green;
+    color: $nexgen_primary_green;
+}
+
+.btn_green_outline:hover {
+    background-color: $nexgen_primary_green;
+    border: 1px solid transparent;
+    color: #fff;
 }
 
 .col {

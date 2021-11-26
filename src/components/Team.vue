@@ -186,6 +186,7 @@ export default {};
 
         .social {
           .social_icon {
+            transition: 0.5s ease-in-out;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -195,6 +196,11 @@ export default {};
             border-radius: 50%;
             color: $nexgen_primary_green;
             font-size: 1rem;
+            cursor: pointer;
+
+            &:hover {
+              background-color: #cce3de;
+            }
           }
         }
       }
