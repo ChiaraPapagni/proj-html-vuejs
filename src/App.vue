@@ -2,7 +2,7 @@
   <div id="app">
     <SiteHeader :phone="phone" :email="email" :openHours="openHours" />
     <SiteMain />
-    <SiteFooter :address="address" />
+    <SiteFooter :phone="phone" :email="email" :address="address" />
   </div>
 </template>
 
