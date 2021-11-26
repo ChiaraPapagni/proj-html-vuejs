@@ -168,22 +168,6 @@ main {
         }
       }
     }
-
-    .form {
-      .input {
-        display: block;
-        width: -webkit-fill-available;
-        background-color: rgba($color: #fff, $alpha: 0.55);
-        border: 1px solid transparent;
-        border-radius: 5px;
-        box-shadow: none;
-        outline: none;
-        color: $nexgen_bg_dark;
-        font-size: 1rem;
-        padding: 1rem;
-        margin-bottom: 1rem;
-      }
-    }
   }
 }
 </style>

@@ -55,17 +55,21 @@
       <div class="consulting">
         <p class="fusions">Fusions & acquisitions</p>
         <h2>Insurance Consulting</h2>
-        <div class="d_flex">
-          <div class="box">Name</div>
-          <div class="box">Email</div>
+        <div class="form d_flex">
+          <input type="text" placeholder="Name" class="input" />
+          <input type="text" placeholder="Email" class="input" />
         </div>
-        <div class="d_flex">
-          <div class="box">Phone</div>
-          <div class="box d_flex">
-            More Info
-            <font-awesome-icon :icon="['fas', 'chevron-down']" class="icon" />
+        <div class="form d_flex">
+          <input type="tel" placeholder="Phone" class="input" />
+          <div class="input">
+            <p class="d_flex more_info">
+              <span>More Info</span>
+              <font-awesome-icon :icon="['fas', 'chevron-down']" class="icon" />
+            </p>
           </div>
         </div>
+        <!-- /.form -->
+
         <div class="btn d_flex">
           <div class="btn_green">get in touch</div>
           <div class="btn_green_outline">read more</div>
@@ -202,21 +206,25 @@ header {
         color: #0daaaa;
       }
 
-      .d_flex {
-        justify-content: flex-start;
+      .form {
+        &.d_flex {
+          justify-content: flex-start;
+          gap: 1rem;
+        }
 
-        .box {
-          background-color: #cdd1d3;
-          padding: 0.8rem;
-          border-radius: 5px;
+        .input {
           width: 245px;
-          margin: 0 1rem 1rem 0;
-          color: #8e98a2;
+          background-color: #cdd1d3;
+        }
+
+        .more_info {
+          font-family: "Arial";
+          color: #757575;
         }
       }
 
-      .box.d_flex {
-        justify-content: space-between;
+      .btn.d_flex {
+        justify-content: flex-start;
       }
 
       .btn_green {
