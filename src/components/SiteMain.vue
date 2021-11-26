@@ -3,7 +3,7 @@
     <div class="company">
       <div class="container d_flex">
         <div class="col">
-          <p class="title">about the network</p>
+          <p class="section_title">about the network</p>
           <h3><span class="title_bg">The</span> Company</h3>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cras
@@ -67,12 +67,24 @@
     <!-- /.news -->
 
     <div class="newsletter">
-      <div class="title">Newsletter</div>
-      <h3><span class="title_bg">Know</span> First</h3>
-      <p>
-        Follow closely and receive content about our company and the news of the
-        current market.
-      </p>
+      <div class="d_flex">
+        <div class="know col">
+          <div class="section_title">Newsletter</div>
+          <h3><span class="title_bg">Know</span> First</h3>
+          <p>
+            Follow closely and receive content about our company and the news of
+            the current market.
+          </p>
+        </div>
+        <!-- /.know -->
+
+        <div class="form col">
+          <input type="text" placeholder="Name" class="input" />
+          <input type="text" placeholder="Email" class="input" />
+          <div class="btn_green">subscribe</div>
+        </div>
+        <!-- /.form -->
+      </div>
     </div>
     <!-- /.newsletter -->
   </main>
@@ -141,11 +153,35 @@ main {
     color: #ccc;
     font-weight: 300;
 
-    h3 {
-      color: white;
+    & > .d_flex {
+      width: 50%;
+      margin: auto;
+      gap: 2rem;
+    }
 
-      .title_bg {
-        background-color: #173338;
+    .know {
+      h3 {
+        color: white;
+
+        .title_bg {
+          background-color: #173338;
+        }
+      }
+    }
+
+    .form {
+      .input {
+        display: block;
+        width: -webkit-fill-available;
+        background-color: rgba($color: #fff, $alpha: 0.55);
+        border: 1px solid transparent;
+        border-radius: 5px;
+        box-shadow: none;
+        outline: none;
+        color: $nexgen_bg_dark;
+        font-size: 1rem;
+        padding: 1rem;
+        margin-bottom: 1rem;
       }
     }
   }

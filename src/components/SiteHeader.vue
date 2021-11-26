@@ -4,7 +4,7 @@
       <div class="container d_flex">
         <div class="left d_flex">
           <font-awesome-icon :icon="['fas', 'clock']" class="icon" />
-          <p>Open Hours: {{ days }} - {{ hours }}</p>
+          <p>Open Hours: {{ openHours.days }} - {{ openHours.hours }}</p>
         </div>
         <!-- /.left -->
         <div class="right d_flex">
@@ -80,12 +80,13 @@
 
 <script>
 export default {
+  props: {
+    phone: String,
+    email: String,
+    openHours: Object,
+  },
   data() {
     return {
-      days: "Mon - Sat",
-      hours: "9.00 - 18.00",
-      phone: "+1 (305) 1234-5678",
-      email: "hello@example.com",
       pages: [
         {
           name: "home",

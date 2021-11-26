@@ -1,7 +1,7 @@
 <template>
   <div class="team">
     <div class="container">
-      <p class="title">We like what we do</p>
+      <p class="section_title">We like what we do</p>
       <div class="d_flex">
         <div class="experts">
           <h3><span class="title_bg">Team</span> of Experts</h3>
@@ -135,8 +135,12 @@ export default {};
   color: #ccc;
   font-weight: 300;
 
+  & > .container > .d_flex {
+    align-items: flex-end;
+  }
+
   .experts {
-    width: 70%;
+    width: 68%;
 
     h3 {
       color: white;
@@ -203,7 +207,7 @@ export default {};
   }
 
   .speech {
-    width: 30%;
+    width: 32%;
     background-color: $nexgen_primary_green;
     border-radius: 5px;
     padding: 2rem 1.8rem 2rem 2rem;

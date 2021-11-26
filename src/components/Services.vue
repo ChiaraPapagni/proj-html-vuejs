@@ -1,7 +1,7 @@
 <template>
   <div class="services">
     <div class="container">
-      <p class="title">Our business areas</p>
+      <p class="section_title">Our business areas</p>
       <h3>Excellence in <span class="title_bg">Services</span></h3>
       <div class="d_flex">
         <p>

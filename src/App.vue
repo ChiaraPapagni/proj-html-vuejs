@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <SiteHeader />
+    <SiteHeader :phone="phone" :email="email" :openHours="openHours" />
     <SiteMain />
-    <SiteFooter />
+    <SiteFooter :address="address" />
   </div>
 </template>
 
@@ -17,6 +17,17 @@ export default {
     SiteMain,
     SiteHeader,
     SiteFooter,
+  },
+  data() {
+    return {
+      phone: "+1 (305) 1234-5678",
+      email: "hello@example.com",
+      address: "Main Avenue, 987",
+      openHours: {
+        days: "Mon - Sat",
+        hours: "9.00 - 18.00",
+      },
+    };
   },
 };
 </script>

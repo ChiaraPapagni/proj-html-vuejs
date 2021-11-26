@@ -1,6 +1,6 @@
 <template>
   <div class="management">
-    <p class="title">How it works in practice</p>
+    <p class="section_title">How it works in practice</p>
     <h3><span class="title_bg">Process</span> Management</h3>
     <p class="info_text">
       We work with innovative methodologies to ensure that the entire
