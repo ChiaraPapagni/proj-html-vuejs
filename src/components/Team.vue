@@ -1,15 +1,17 @@
 <template>
   <div class="team">
     <div class="container">
-      <p class="section_title">We like what we do</p>
+      <p class="section_title">{{ sectionTitle }}</p>
       <div class="d_flex">
         <div class="experts">
-          <h3><span class="title_bg">Team</span> of Experts</h3>
+          <h3>
+            <span class="title_bg">{{ title.marked }}</span>
+            {{ title.notMarked }}
+          </h3>
           <p>
-            Ethics and integrity are the bases on whici our professionals build
-            their careers.
+            {{ description }}
           </p>
-          <p>They are fundamentals that become daily attitudes.</p>
+          <p>{{ information }}</p>
 
           <div class="d_flex">
             <div class="team_member d_flex">
@@ -123,7 +125,20 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      sectionTitle: "We like what we do",
+      title: {
+        marked: "Team",
+        notMarked: "of Experts",
+      },
+      description: `Ethics and integrity are the bases on whici our professionals build
+            their careers.`,
+      information: `They are fundamentals that become daily attitudes.`,
+    };
+  },
+};
 </script>
 
 <style lang="scss">

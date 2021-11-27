@@ -34,20 +34,22 @@
     <!-- /.top_header -->
 
     <div class="bottom_header">
-      <div class="navbar container d_flex">
-        <div class="logo">
-          <span class="logo_bg">Nex</span>
-          <span>gen</span>
-        </div>
-        <div class="menu">
-          <ul>
-            <li v-for="(page, i) in pages" :key="i">
-              <a href="" class="underline">
-                <span>{{ page.name }}</span>
-              </a>
-            </li>
-            <li class="btn_green">get in touch</li>
-          </ul>
+      <div class="navbar" :class="{ sticky: scroll }">
+        <div class="container d_flex">
+          <div class="logo">
+            <span class="logo_bg">Nex</span>
+            <span>gen</span>
+          </div>
+          <div class="menu">
+            <ul>
+              <li v-for="(page, i) in pages" :key="i">
+                <a :href="'#' + page.name" class="underline">
+                  <span>{{ page.name }}</span>
+                </a>
+              </li>
+              <li class="btn_green">get in touch</li>
+            </ul>
+          </div>
         </div>
       </div>
       <!-- /.navbar -->
@@ -115,7 +117,24 @@ export default {
           name: "blog",
         },
       ],
+      scroll: false,
+      lastPosition: 0,
     };
+  },
+  methods: {
+    handleScroll() {
+      if (this.lastPosition < window.scrollY) {
+        this.scroll = true;
+      } else {
+        this.scroll = false;
+      }
+    },
+  },
+  created() {
+    window.addEventListener("scroll", this.handleScroll);
+  },
+  destroyed() {
+    window.removeEventListener("scroll", this.handleScroll);
   },
 };
 </script>
@@ -123,9 +142,17 @@ export default {
 <style lang="scss">
 @import "../assets/scss/variables.scss";
 
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: $nexgen_white;
+}
+
 header {
   background-image: url(../assets/img/bg-6.jpg);
   background-position-y: center;
+  background-attachment: fixed;
 
   .top_header {
     background-color: $nexgen_primary_blue;
@@ -177,18 +204,22 @@ header {
 
   .bottom_header {
     .navbar {
+      transition: 0.2s linear;
+      font-family: "Montserrat", arial, sans-serif;
+      font-size: 1rem;
+      font-weight: 500;
       text-transform: uppercase;
-      padding: 2rem 0;
+      padding: 1.2rem 0;
 
       .logo {
-        font-family: "Montserrat", sans-serif;
         font-size: 1.2rem;
+        font-weight: 700;
         letter-spacing: 0.35rem;
         color: $nexgen_primary_blue;
 
         .logo_bg {
           background-color: rgba($nexgen_primary_green, 0.15);
-          padding: 0.8rem 0 0.8rem 1.5rem;
+          padding: 0.7rem 0 0.7rem 1.8rem;
           border-radius: 50px 0 0 50px;
           color: $nexgen_primary_green;
           margin-right: 0.2rem;
@@ -201,7 +232,6 @@ header {
         margin-left: 2rem;
 
         a {
-          font-size: 1.1rem;
           text-decoration: none;
           color: $nexgen_primary_blue;
 
@@ -240,7 +270,7 @@ header {
       width: 50%;
       margin-left: auto;
       margin-top: 150px;
-      padding: 0 6rem 200px 3rem;
+      padding: 0 6rem 250px 3rem;
 
       .fusions {
         font-size: 1.1rem;

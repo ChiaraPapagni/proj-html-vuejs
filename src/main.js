@@ -29,7 +29,6 @@ library.add(faClock, faPhoneAlt, faEnvelope, faMapMarkerAlt, faFacebookF, faTwit
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
-
 Vue.config.productionTip = false
 
 new Vue({

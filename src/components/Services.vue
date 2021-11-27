@@ -1,13 +1,13 @@
 <template>
   <div class="services">
     <div class="container">
-      <p class="section_title">Our business areas</p>
-      <h3>Excellence in <span class="title_bg">Services</span></h3>
+      <p class="section_title">{{ sectionTitle }}</p>
+      <h3>
+        {{ title.notMarked }} <span class="title_bg">{{ title.marked }}</span>
+      </h3>
       <div class="d_flex">
         <p>
-          We are leaders in providing consultancy services with a set of
-          cutting-edge technologies and a team of experienced and renowed
-          professionals. These are some options that you can hire.
+          {{ description }}
         </p>
         <div class="btn_green">See all</div>
       </div>
@@ -102,7 +102,20 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      sectionTitle: "Our business areas",
+      title: {
+        marked: "Services",
+        notMarked: "Excellence in",
+      },
+      description: `We are leaders in providing consultancy services with a set of
+          cutting-edge technologies and a team of experienced and renowed
+          professionals. These are some options that you can hire.`,
+    };
+  },
+};
 </script>
 
 <style lang="scss">

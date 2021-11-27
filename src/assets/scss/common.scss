@@ -1,7 +1,7 @@
 /* Poppins Font */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
 /* Montserrat Font */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800&display=swap');
 
 /* Reset Rules */
 * {
@@ -56,7 +56,6 @@ h5 {
 
 .btn_green,
 .btn_green_outline {
-    transition: 0.5s ease-in-out;
     display: inline-block;
     padding: 0.6rem 1.5rem;
     border-radius: 5px;
@@ -76,11 +75,12 @@ h5 {
 }
 
 .btn_green:hover {
-    background-color: #00a6a6;
+    filter: brightness(1.1);
 }
 
 .btn_green_outline:hover {
-    background-color: #00a6a6;
+    background-color: $nexgen_primary_green;
+    filter: brightness(1.1);
     border: 1px solid transparent;
     color: $nexgen_white;
 }
