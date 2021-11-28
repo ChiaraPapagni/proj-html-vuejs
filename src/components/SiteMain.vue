@@ -1,23 +1,23 @@
 <template>
   <main id="site_main">
-    <About />
+    <About id="about" />
 
-    <Services />
+    <Services id="services" />
 
-    <Process />
+    <Process id="process" />
 
-    <Team />
+    <Team id="team" />
 
-    <Blog />
+    <Blog id="blog" />
 
-    <div class="newsletter">
+    <div id="newsletter" class="newsletter">
       <div class="d_flex">
         <div class="know col">
           <div class="section_title">{{ sectionTitle }}</div>
-          <h3>
+          <h2>
             <span class="title_bg">{{ title.marked }}</span>
             {{ title.notMarked }}
-          </h3>
+          </h2>
           <p>
             {{ description }}
           </p>
@@ -27,7 +27,7 @@
         <div class="form col">
           <input type="text" placeholder="Name" class="input" />
           <input type="text" placeholder="Email" class="input" />
-          <div class="btn_green">subscribe</div>
+          <div class="btn">subscribe</div>
         </div>
         <!-- /.form -->
       </div>
@@ -73,8 +73,9 @@ main {
   .newsletter {
     background-image: url("../assets/img/bg-1.jpg");
     background-position-y: center;
+    background-attachment: fixed;
     object-position: center;
-    padding: 120px 0;
+    padding: 130px 0;
     color: $nexgen_light_grey_text;
     font-weight: 300;
 
@@ -85,12 +86,12 @@ main {
     }
 
     .know {
-      h3 {
+      h2 {
         color: $nexgen_white;
         margin: 1rem 0;
 
         .title_bg {
-          background-color: rgba($nexgen_primary_green, 0.2);
+          background-color: rgba($nexgen_primary_color, 0.2);
         }
       }
     }

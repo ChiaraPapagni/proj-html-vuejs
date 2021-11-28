@@ -1,22 +1,22 @@
 <template>
-  <header id="site_header">
+  <header id="home">
     <div class="top_header">
       <div class="container d_flex">
         <div class="left d_flex">
           <font-awesome-icon :icon="['fas', 'clock']" class="icon" />
-          <p>Open Hours: {{ openHours.days }} - {{ openHours.hours }}</p>
+          Open Hours: {{ openHours.days }} - {{ openHours.hours }}
         </div>
         <!-- /.left -->
         <div class="right d_flex">
-          <p class="phone d_flex">
+          <span class="phone d_flex">
             <font-awesome-icon :icon="['fas', 'phone-alt']" class="icon" />
             {{ phone }}
-          </p>
-          <p class="email d_flex">
+          </span>
+          <span class="email d_flex">
             <font-awesome-icon :icon="['fas', 'envelope']" class="icon" />
             {{ email }}
-          </p>
-          <p>
+          </span>
+          <span>
             <font-awesome-icon
               :icon="['fab', 'facebook-f']"
               class="social_icon"
@@ -26,7 +26,7 @@
               :icon="['fab', 'linkedin-in']"
               class="social_icon"
             />
-          </p>
+          </span>
         </div>
         <!-- /.right -->
       </div>
@@ -43,11 +43,14 @@
           <div class="menu">
             <ul>
               <li v-for="(page, i) in pages" :key="i">
+                <!-- <router-link to="'/' + page.name">
+                  {{ page.name }}
+                </router-link> -->
                 <a :href="'#' + page.name" class="underline">
                   <span>{{ page.name }}</span>
                 </a>
               </li>
-              <li class="btn_green">get in touch</li>
+              <li class="btn">get in touch</li>
             </ul>
           </div>
         </div>
@@ -56,7 +59,7 @@
 
       <div class="consulting">
         <p class="fusions">Fusions & acquisitions</p>
-        <h2>Insurance Consulting</h2>
+        <h1>Insurance Consulting</h1>
         <div class="form d_flex">
           <input type="text" placeholder="Name" class="input" />
           <input type="text" placeholder="Email" class="input" />
@@ -76,9 +79,9 @@
         </div>
         <!-- /.form -->
 
-        <div class="btn d_flex">
-          <div class="btn_green">get in touch</div>
-          <div class="btn_green_outline">read more</div>
+        <div class="btn_group d_flex">
+          <div class="btn">get in touch</div>
+          <div class="btn_outline">read more</div>
         </div>
       </div>
       <!-- /.consulting -->
@@ -118,12 +121,11 @@ export default {
         },
       ],
       scroll: false,
-      lastPosition: 0,
     };
   },
   methods: {
     handleScroll() {
-      if (this.lastPosition < window.scrollY) {
+      if (window.scrollY > 0) {
         this.scroll = true;
       } else {
         this.scroll = false;
@@ -142,42 +144,34 @@ export default {
 <style lang="scss">
 @import "../assets/scss/variables.scss";
 
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background-color: $nexgen_white;
-}
-
 header {
   background-image: url(../assets/img/bg-6.jpg);
   background-position-y: center;
   background-attachment: fixed;
 
   .top_header {
-    background-color: $nexgen_primary_blue;
+    background-color: $nexgen_secondary_color;
     color: $nexgen_light_grey_text;
     font-size: 0.9rem;
-    font-weight: 300;
-    padding: 0.9rem 0;
+    padding: 1rem 0;
 
     .container {
       .left {
         transition: 0.1s linear;
 
-        p {
-          margin-left: 0.5rem;
+        .icon {
+          margin-right: 0.5rem;
         }
 
         &:hover {
-          color: $nexgen_primary_green;
+          color: $nexgen_primary_color;
           cursor: pointer;
         }
       }
 
       .right {
         .phone {
-          margin-right: 2rem;
+          margin-right: 2.2rem;
         }
 
         .icon {
@@ -185,7 +179,7 @@ header {
         }
 
         .social_icon {
-          margin-left: 2rem;
+          margin-left: 2.2rem;
         }
 
         .phone,
@@ -195,7 +189,7 @@ header {
           cursor: pointer;
 
           &:hover {
-            color: $nexgen_primary_green;
+            color: $nexgen_primary_color;
           }
         }
       }
@@ -205,23 +199,22 @@ header {
   .bottom_header {
     .navbar {
       transition: 0.2s linear;
-      font-family: "Montserrat", arial, sans-serif;
       font-size: 1rem;
       font-weight: 500;
       text-transform: uppercase;
-      padding: 1.2rem 0;
+      padding: 2rem 0;
 
       .logo {
         font-size: 1.2rem;
         font-weight: 700;
         letter-spacing: 0.35rem;
-        color: $nexgen_primary_blue;
+        color: $nexgen_secondary_color;
 
         .logo_bg {
-          background-color: rgba($nexgen_primary_green, 0.15);
+          background-color: rgba($nexgen_primary_color, 0.15);
           padding: 0.7rem 0 0.7rem 1.8rem;
           border-radius: 50px 0 0 50px;
-          color: $nexgen_primary_green;
+          color: $nexgen_primary_color;
           margin-right: 0.2rem;
         }
       }
@@ -233,10 +226,10 @@ header {
 
         a {
           text-decoration: none;
-          color: $nexgen_primary_blue;
+          color: $nexgen_secondary_color;
 
           &:hover {
-            color: $nexgen_primary_green;
+            color: $nexgen_primary_color;
           }
         }
 
@@ -252,7 +245,7 @@ header {
           right: 0;
           width: 0;
           height: 2px;
-          background-color: $nexgen_primary_green;
+          background-color: $nexgen_primary_color;
           transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1);
         }
 
@@ -266,6 +259,16 @@ header {
       }
     }
 
+    .sticky {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: $nexgen_white;
+      box-shadow: 0 2px 25px 0 rgba($nexgen_black, 10%);
+      padding: 1.2rem 0;
+      z-index: 10;
+    }
+
     .consulting {
       width: 50%;
       margin-left: auto;
@@ -273,8 +276,8 @@ header {
       padding: 0 6rem 250px 3rem;
 
       .fusions {
-        font-size: 1.1rem;
-        font-weight: 500;
+        font-size: 1rem;
+        font-weight: 600;
         text-transform: uppercase;
         color: #00a6a6;
       }
@@ -296,11 +299,11 @@ header {
         }
       }
 
-      .btn.d_flex {
+      .btn_group.d_flex {
         justify-content: flex-start;
       }
 
-      .btn_green {
+      .btn {
         margin-right: 1rem;
       }
     }

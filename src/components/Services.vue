@@ -2,53 +2,53 @@
   <div class="services">
     <div class="container">
       <p class="section_title">{{ sectionTitle }}</p>
-      <h3>
+      <h2>
         {{ title.notMarked }} <span class="title_bg">{{ title.marked }}</span>
-      </h3>
+      </h2>
       <div class="d_flex">
         <p>
           {{ description }}
         </p>
-        <div class="btn_green">See all</div>
+        <div class="btn">See all</div>
       </div>
 
       <div class="cards">
         <div class="d_flex">
           <div class="card col_3">
             <div class="card_header d_flex">
-              <img src="../assets/img/audit.png" />
+              <img src="../assets/img/service-1.png" />
               <font-awesome-icon
                 :icon="['fas', 'arrow-right']"
                 class="icon arrow_right"
               />
             </div>
-            <h5>Audit & Assurance</h5>
+            <h4>Audit & Assurance</h4>
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
           </div>
           <!-- /.card -->
 
           <div class="card col_3">
             <div class="card_header d_flex">
-              <img src="../assets/img/financial.png" />
+              <img src="../assets/img/service-2.png" />
               <font-awesome-icon
                 :icon="['fas', 'arrow-right']"
                 class="icon arrow_right"
               />
             </div>
-            <h5>Financial Advisory</h5>
+            <h4>Financial Advisory</h4>
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
           </div>
           <!-- /.card -->
 
           <div class="card col_3">
             <div class="card_header d_flex">
-              <img src="../assets/img/analytics.png" />
+              <img src="../assets/img/service-3.png" />
               <font-awesome-icon
                 :icon="['fas', 'arrow-right']"
                 class="icon arrow_right"
               />
             </div>
-            <h5>Analytics and M&A</h5>
+            <h4>Analytics and M&A</h4>
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
           </div>
           <!-- /.card -->
@@ -57,39 +57,39 @@
         <div class="d_flex">
           <div class="card col_3">
             <div class="card_header d_flex">
-              <img src="../assets/img/middle.png" />
+              <img src="../assets/img/service-4.png" />
               <font-awesome-icon
                 :icon="['fas', 'arrow-right']"
                 class="icon arrow_right"
               />
             </div>
-            <h5>Middle Marketing</h5>
+            <h4>Middle Marketing</h4>
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
           </div>
           <!-- /.card -->
 
           <div class="card col_3">
             <div class="card_header d_flex">
-              <img src="../assets/img/legal.png" />
+              <img src="../assets/img/service-5.png" />
               <font-awesome-icon
                 :icon="['fas', 'arrow-right']"
                 class="icon arrow_right"
               />
             </div>
-            <h5>Legal Consulting</h5>
+            <h4>Legal Consulting</h4>
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
           </div>
           <!-- /.card -->
 
           <div class="card col_3">
             <div class="card_header d_flex">
-              <img src="../assets/img/risk.png" />
+              <img src="../assets/img/service-6.png" />
               <font-awesome-icon
                 :icon="['fas', 'arrow-right']"
                 class="icon arrow_right"
               />
             </div>
-            <h5>Regulatory Risk</h5>
+            <h4>Regulatory Risk</h4>
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
           </div>
           <!-- /.card -->
@@ -123,18 +123,18 @@ export default {
 
 .services {
   background-color: $nexgen_light_green;
-  padding: 120px 0;
+  padding: 130px 0;
   color: $nexgen_grey;
   font-weight: 300;
 
   .container {
-    h3 {
-      color: $nexgen_primary_blue;
+    h2 {
+      color: $nexgen_secondary_color;
     }
 
     .title_bg {
-      color: $nexgen_primary_green;
-      background-color: rgba($nexgen_primary_green, 0.15);
+      color: $nexgen_primary_color;
+      background-color: rgba($nexgen_primary_color, 0.15);
     }
 
     .d_flex > p {
@@ -159,23 +159,23 @@ export default {
           transform: translateY(-7.5px);
         }
         .icon {
-          color: $nexgen_primary_green;
+          color: $nexgen_primary_color;
 
           &.arrow_right {
             transition: 0.3s linear;
             font-size: 1.5rem;
-            color: rgba($nexgen_primary_green, 0.5);
+            color: rgba($nexgen_primary_color, 0.5);
             cursor: pointer;
           }
 
           &.arrow_right:hover {
             font-size: 2rem;
-            color: $nexgen_primary_green;
+            color: $nexgen_primary_color;
           }
         }
 
-        h5 {
-          color: $nexgen_primary_blue;
+        h4 {
+          color: $nexgen_secondary_color;
           margin: 1.3rem 0;
         }
       }

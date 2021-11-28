@@ -1,9 +1,9 @@
 <template>
   <div class="process_management">
     <p class="section_title">{{ sectionTitle }}</p>
-    <h3>
+    <h2>
       <span class="title_bg">{{ title.marked }}</span> {{ title.notMarked }}
-    </h3>
+    </h2>
     <p class="info_text">
       {{ description }}
     </p>
@@ -12,7 +12,7 @@
       <div class="process_list d_flex">
         <div v-for="process in processManagement" :key="process.processId">
           <p class="number">{{ process.processId }}</p>
-          <h5>{{ process.processName }}</h5>
+          <h4>{{ process.processName }}</h4>
           <p>{{ process.processDesc }}</p>
         </div>
       </div>
@@ -69,17 +69,17 @@ export default {
 @import "../assets/scss/variables.scss";
 
 .process_management {
-  padding: 120px 0;
+  padding: 130px 0;
   color: $nexgen_grey;
   font-weight: 300;
   text-align: center;
 
-  h3 {
-    color: $nexgen_primary_blue;
+  h2 {
+    color: $nexgen_secondary_color;
 
     .title_bg {
-      background-color: rgba($nexgen_primary_green, 0.15);
-      color: $nexgen_primary_green;
+      background-color: rgba($nexgen_primary_color, 0.15);
+      color: $nexgen_primary_color;
     }
   }
 
@@ -90,7 +90,7 @@ export default {
 
   .process {
     margin-top: 5rem;
-    border-top: 5px solid rgba($nexgen_primary_green, 0.15);
+    border-top: 5px solid rgba($nexgen_primary_color, 0.15);
 
     .process_list {
       width: 80%;
@@ -110,11 +110,11 @@ export default {
         border-radius: 50%;
         font-size: 1.2rem;
         font-weight: 700;
-        color: $nexgen_primary_green;
+        color: $nexgen_primary_color;
       }
 
-      h5 {
-        color: $nexgen_primary_blue;
+      h4 {
+        color: $nexgen_secondary_color;
         margin: 1rem 0;
         line-height: 1.8rem;
       }
@@ -123,7 +123,7 @@ export default {
         cursor: crosshair;
 
         .number {
-          background-color: $nexgen_primary_green;
+          background-color: $nexgen_primary_color;
           color: $nexgen_white;
         }
       }

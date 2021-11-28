@@ -1,6 +1,7 @@
 /* Colors */
-$nexgen_primary_green: #E94649;
-$nexgen_primary_blue: #21333E;
+$nexgen_primary_color: #E94649;
+//#058283;
+$nexgen_secondary_color: #21333E;
 $nexgen_primary_dark: #111117;
 
 $nexgen_light_green: #EEF4ED;
@@ -9,3 +10,24 @@ $nexgen_grey: #606D75;
 $nexgen_white: #FFFFFF;
 $nexgen_dark_grey: #19191F;
 $nexgen_black: #0D0D11;
+
+
+/* Fonts Family */
+$nexgen_title_font: 'Poppins',
+sans-serif;
+$nexgen_paragraph_font: 'Montserrat',
+sans-serif;
+
+/* Fonts Size */
+$nexgen_h1_size: 4.5rem;
+$nexgen_h2_size: 3rem;
+$nexgen_h3_size: 2rem;
+$nexgen_h4_size: 1.5rem;
+$nexgen_p_size: 1rem;
+
+/* Fonts Weight */
+$nexgen_h1_weight: 900;
+$nexgen_h2_weight: 800;
+$nexgen_h3_weight: 700;
+$nexgen_h4_weight: 700;
+$nexgen_p_weight: 400;

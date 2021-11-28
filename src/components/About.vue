@@ -3,10 +3,10 @@
     <div class="container d_flex">
       <div class="col">
         <p class="section_title">{{ sectionTitle }}</p>
-        <h3>
+        <h2>
           <span class="title_bg">{{ title.marked }}</span>
           {{ title.notMarked }}
-        </h3>
+        </h2>
         <p>
           {{ description }}
         </p>
@@ -75,7 +75,7 @@ export default {
 
 .about {
   background-color: $nexgen_primary_dark;
-  padding: 120px 0;
+  padding: 130px 0;
   color: $nexgen_light_grey_text;
   font-weight: 300;
 
@@ -83,12 +83,12 @@ export default {
     align-items: end;
     gap: 6.5rem;
 
-    h3 {
+    h2 {
       color: $nexgen_white;
     }
 
     .title_bg {
-      background-color: rgba($nexgen_primary_green, 0.2);
+      background-color: rgba($nexgen_primary_color, 0.2);
     }
 
     p {
@@ -96,7 +96,7 @@ export default {
     }
 
     .icon {
-      color: $nexgen_primary_green;
+      color: $nexgen_primary_color;
       font-size: 1.4rem;
       margin-right: 0.5rem;
     }

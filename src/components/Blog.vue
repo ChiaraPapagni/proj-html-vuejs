@@ -1,146 +1,20 @@
 <template id="blog">
   <div class="news container">
     <p class="section_title">{{ sectionTitle }}</p>
-    <h3>
+    <h2>
       {{ title.notMarked }} <span class="title_bg">{{ title.marked }}</span>
-    </h3>
+    </h2>
     <div class="d_flex">
       <p>
         {{ description }}
       </p>
-      <div class="btn_green">see all</div>
+      <div class="btn">see all</div>
     </div>
 
     <swiper ref="mySwiper" :options="swiperOptions">
-      <swiper-slide class="swiper-slide">
-        <div class="card">
-          <img src="../assets/img/news-1.jpg" />
-          <div class="info">
-            <div class="card_header d_flex">
-              <p>
-                <font-awesome-icon :icon="['far', 'user']" class="icon" />
-                <span>Andrea Miller</span>
-              </p>
-              <p>
-                <font-awesome-icon
-                  :icon="['far', 'clock']"
-                  class="icon clock"
-                />
-                <span>2 Days Ago</span>
-              </p>
-            </div>
-            <h5>Increasing creativity is possible for everyone</h5>
-            <p class="desc">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            </p>
-          </div>
-        </div>
-      </swiper-slide>
-      <swiper-slide class="swiper-slide">
-        <div class="card">
-          <img src="../assets/img/news-2.jpg" />
-          <div class="info">
-            <div class="card_header d_flex">
-              <p>
-                <font-awesome-icon :icon="['far', 'user']" class="icon" />
-                <span>John Smith</span>
-              </p>
-              <p>
-                <font-awesome-icon
-                  :icon="['far', 'clock']"
-                  class="icon clock"
-                />
-                <span>9 Days Ago</span>
-              </p>
-            </div>
-            <h5>Because market research is part of the business plan</h5>
-            <p class="desc">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            </p>
-          </div>
-        </div>
-      </swiper-slide>
-      <swiper-slide class="swiper-slide">
-        <div class="card">
-          <img src="../assets/img/news-3.jpg" />
-          <div class="info">
-            <div class="card_header d_flex">
-              <p>
-                <font-awesome-icon :icon="['far', 'user']" class="icon" />
-                <span>Andrea Miller</span>
-              </p>
-              <p>
-                <font-awesome-icon
-                  :icon="['far', 'clock']"
-                  class="icon clock"
-                />
-                <span>16 Days Ago</span>
-              </p>
-            </div>
-            <h5>Working from home is now a trend</h5>
-            <p class="desc">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            </p>
-          </div>
-        </div>
-      </swiper-slide>
-      <swiper-slide class="swiper-slide">
-        <div class="card">
-          <img src="../assets/img/news-4.jpg" />
-          <div class="info">
-            <div class="card_header d_flex">
-              <p>
-                <font-awesome-icon :icon="['far', 'user']" class="icon" />
-                <span>John Smith</span>
-              </p>
-              <p>
-                <font-awesome-icon
-                  :icon="['far', 'clock']"
-                  class="icon clock"
-                />
-                <span>23 Days Ago</span>
-              </p>
-            </div>
-            <h5>Tips for having a goog relationship at work</h5>
-            <p class="desc">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            </p>
-          </div>
-        </div>
-      </swiper-slide>
-      <swiper-slide class="swiper-slide">
-        <div class="card">
-          <img src="../assets/img/news-5.jpg" />
-          <div class="info">
-            <div class="card_header d_flex">
-              <p>
-                <font-awesome-icon :icon="['far', 'user']" class="icon" />
-                <span>David Cooper</span>
-              </p>
-              <p>
-                <font-awesome-icon
-                  :icon="['far', 'clock']"
-                  class="icon clock"
-                />
-                <span>30 Days Ago</span>
-              </p>
-            </div>
-            <h5>
-              David Cooper tells about the opening of the new office in
-              Baltimore
-            </h5>
-            <p class="desc">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            </p>
-          </div>
-        </div>
-      </swiper-slide>
-    </swiper>
-
-    <!-- <swiper ref="mySwiper" :options="swiperOptions">
       <swiper-slide class="swiper-slide" v-for="(item, i) in news" :key="i">
         <div class="card">
-          <img :src="item.poster" />
+          <img :src="item.poster.url" />
 
           <div class="info">
             <div class="card_header d_flex">
@@ -156,14 +30,14 @@
                 <span>{{ item.date }}</span>
               </p>
             </div>
-            <h5>{{ item.title }}</h5>
+            <h4>{{ item.title }}</h4>
             <p class="desc">
               {{ item.desc }}
             </p>
           </div>
         </div>
       </swiper-slide>
-    </swiper> -->
+    </swiper>
   </div>
   <!-- /.news -->
 </template>
@@ -190,28 +64,28 @@ export default {
           name: "Andrea Miller",
           date: "2 Days Ago",
           title: "Increasing creativity is possible for everyone",
-          poster: "news-1",
+          poster: { url: require("../assets/img/news-1.jpg") },
           desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
         },
         {
           name: "John Smith",
           date: "9 Days Ago",
           title: "Because market research is part of the business plan",
-          poster: "../assets/img/news-2.jpg",
+          poster: { url: require("../assets/img/news-2.jpg") },
           desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
         },
         {
           name: "Andrea Miller",
           date: "16 Days Ago",
           title: "Working from home is now a trend",
-          poster: "../assets/img/news-3.jpg",
+          poster: { url: require("../assets/img/news-3.jpg") },
           desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
         },
         {
           name: "John Smith",
           date: "23 Days Ago",
           title: "Tips for having a goog relationship at work",
-          poster: "../assets/img/news-4.jpg",
+          poster: { url: require("../assets/img/news-4.jpg") },
           desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
         },
         {
@@ -219,7 +93,7 @@ export default {
           date: "30 Days Ago",
           title:
             "David Cooper tells about the opening of the new office in Baltimore",
-          poster: "../assets/img/news-5.jpg",
+          poster: { url: require("../assets/img/news-5.jpg") },
           desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
         },
       ],
@@ -237,16 +111,17 @@ export default {
 @import "../assets/scss/variables.scss";
 
 .news {
-  padding: 120px 0;
+  padding: 130px 0;
   color: $nexgen_grey;
   font-weight: 300;
 
-  h3 {
-    color: $nexgen_primary_blue;
+  h2 {
+    color: $nexgen_secondary_color;
+    margin: 0.5rem 0;
 
     .title_bg {
-      background-color: rgba($nexgen_primary_green, 0.15);
-      color: $nexgen_primary_green;
+      background-color: rgba($nexgen_primary_color, 0.15);
+      color: $nexgen_primary_color;
     }
   }
 
@@ -289,7 +164,7 @@ export default {
         }
       }
 
-      h5 {
+      h4 {
         transition: 0.3s ease;
         position: absolute;
         left: 0rem;
@@ -319,7 +194,7 @@ export default {
     &:hover .card_header {
       top: 3rem;
     }
-    &:hover h5 {
+    &:hover h4 {
       bottom: 7.5rem;
     }
     &:hover .desc {

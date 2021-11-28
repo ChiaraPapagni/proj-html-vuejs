@@ -1,24 +1,27 @@
 <template>
   <div class="team">
     <div class="container">
-      <p class="section_title">{{ sectionTitle }}</p>
       <div class="d_flex">
-        <div class="experts">
-          <h3>
+        <div class="left">
+          <p class="section_title">{{ sectionTitle }}</p>
+          <h2>
             <span class="title_bg">{{ title.marked }}</span>
             {{ title.notMarked }}
-          </h3>
+          </h2>
           <p>
             {{ description }}
           </p>
           <p>{{ information }}</p>
-
-          <div class="d_flex">
-            <div class="team_member d_flex">
-              <img src="../assets/img/team-1.jpg" alt="David Cooper" />
+          <div class="team_members d_flex">
+            <div
+              class="team_member d_flex"
+              v-for="(person, i) in teamMembers"
+              :key="i"
+            >
+              <img :src="person.picture.url" :alt="person.name" />
               <div class="info">
-                <h5>David Cooper</h5>
-                <p>cto & co-founder</p>
+                <h4>{{ person.name }}</h4>
+                <p>{{ person.role }}</p>
                 <div class="social d_flex">
                   <div class="social_icon">
                     <font-awesome-icon :icon="['fab', 'facebook-f']" />
@@ -32,73 +35,12 @@
                 </div>
               </div>
             </div>
-            <!-- /.team_member -->
-
-            <div class="team_member d_flex">
-              <img src="../assets/img/team-2.jpg" alt="Oliver Jones" />
-              <div class="info">
-                <h5>Oliver Jones</h5>
-                <p>chief procurement</p>
-                <div class="social d_flex">
-                  <div class="social_icon">
-                    <font-awesome-icon :icon="['fab', 'facebook-f']" />
-                  </div>
-                  <div class="social_icon">
-                    <font-awesome-icon :icon="['fab', 'twitter']" />
-                  </div>
-                  <div class="social_icon">
-                    <font-awesome-icon :icon="['fab', 'linkedin-in']" />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- /.team_member -->
-
-            <div class="team_member d_flex">
-              <img src="../assets/img/team-3.jpg" alt="Emma Lopez" />
-              <div class="info">
-                <h5>Emma Lopez</h5>
-                <p>chief marketing</p>
-                <div class="social d_flex">
-                  <div class="social_icon">
-                    <font-awesome-icon :icon="['fab', 'facebook-f']" />
-                  </div>
-                  <div class="social_icon">
-                    <font-awesome-icon :icon="['fab', 'twitter']" />
-                  </div>
-                  <div class="social_icon">
-                    <font-awesome-icon :icon="['fab', 'linkedin-in']" />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- /.team_member -->
-
-            <div class="team_member d_flex">
-              <img src="../assets/img/team-4.jpg" alt="T. Johnson" />
-              <div class="info">
-                <h5>T. Johnson</h5>
-                <p>ceo & president</p>
-                <div class="social d_flex">
-                  <div class="social_icon">
-                    <font-awesome-icon :icon="['fab', 'facebook-f']" />
-                  </div>
-                  <div class="social_icon">
-                    <font-awesome-icon :icon="['fab', 'twitter']" />
-                  </div>
-                  <div class="social_icon">
-                    <font-awesome-icon :icon="['fab', 'linkedin-in']" />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- /.team_member -->
           </div>
+          <!-- /.team_members -->
         </div>
-        <!-- /.experts -->
 
-        <div class="speech">
-          <h5>President Speech</h5>
+        <div class="right speech">
+          <h4>President Speech</h4>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesent
             ut lacinia diam.
@@ -136,6 +78,28 @@ export default {
       description: `Ethics and integrity are the bases on whici our professionals build
             their careers.`,
       information: `They are fundamentals that become daily attitudes.`,
+      teamMembers: [
+        {
+          picture: { url: require("../assets/img/team-1.jpg") },
+          name: "David Cooper",
+          role: "CTO & CO-FOUNDER",
+        },
+        {
+          picture: { url: require("../assets/img/team-2.jpg") },
+          name: "Emma Lopez",
+          role: "chief marketing",
+        },
+        {
+          picture: { url: require("../assets/img/team-3.jpg") },
+          name: "Oliver Jones",
+          role: "chief procurement",
+        },
+        {
+          picture: { url: require("../assets/img/team-4.jpg") },
+          name: "T. Johnson",
+          role: "ceo & president",
+        },
+      ],
     };
   },
 };
@@ -146,7 +110,7 @@ export default {
 
 .team {
   background-color: $nexgen_primary_dark;
-  padding: 120px 0;
+  padding: 130px 0;
   color: $nexgen_light_grey_text;
   font-weight: 300;
 
@@ -154,83 +118,84 @@ export default {
     align-items: flex-end;
   }
 
-  .experts {
-    width: 68%;
+  .left {
+    width: 70%;
 
-    h3 {
+    h2 {
       color: $nexgen_white;
 
       .title_bg {
-        background-color: rgba($nexgen_primary_green, 0.2);
+        background-color: rgba($nexgen_primary_color, 0.2);
       }
     }
 
     .d_flex {
-      margin-top: 3rem;
+      margin-top: 2rem;
       justify-content: flex-start;
-      flex-wrap: wrap;
-      gap: 1rem;
     }
 
-    .team_member {
+    .team_members {
       &.d_flex {
-        margin-top: 1rem;
+        flex-wrap: wrap;
       }
 
-      justify-content: flex-start;
+      .team_member {
+        justify-content: flex-start;
+        align-items: flex-end;
 
-      img {
-        width: 110px;
-        border-radius: 5px;
-        margin-right: 1rem;
-      }
-
-      .info {
-        width: 160px;
-        margin-right: 2rem;
-
-        h5 {
-          color: $nexgen_white;
+        img {
+          width: 110px;
+          border-radius: 5px;
+          margin-right: 2rem;
         }
 
-        p {
-          font-size: 0.9rem;
-          text-transform: uppercase;
-          padding: 0.5rem 0 1rem 0;
-        }
+        .info {
+          width: 170px;
+          margin-right: 4rem;
 
-        .social {
-          .social_icon {
-            transition: 0.5s ease-in-out;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 40px;
-            height: 40px;
-            background-color: rgba($nexgen_primary_green, 0.2);
-            border-radius: 50%;
-            color: $nexgen_primary_green;
-            font-size: 1rem;
-            cursor: pointer;
+          h4 {
+            color: $nexgen_white;
+          }
 
-            &:hover {
-              background-color: $nexgen_primary_green;
-              color: $nexgen_white;
+          p {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            padding: 0.5rem 0 1rem 0;
+          }
+
+          .social {
+            .social_icon {
+              transition: 0.5s ease-in-out;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              width: 40px;
+              height: 40px;
+              background-color: rgba($nexgen_primary_color, 0.2);
+              border-radius: 50%;
+              color: $nexgen_primary_color;
+              font-size: 1rem;
+              cursor: pointer;
+
+              &:hover {
+                background-color: $nexgen_primary_color;
+                color: $nexgen_white;
+              }
             }
           }
         }
-      }
 
-      .social.d_flex {
-        margin: 0;
-        gap: 0.3rem;
+        .social.d_flex {
+          margin: 0;
+          gap: 0.3rem;
+        }
       }
     }
   }
 
-  .speech {
-    width: 32%;
-    background-color: $nexgen_primary_green;
+  .right.speech {
+    width: 30%;
+    background-color: $nexgen_primary_color;
     border-radius: 5px;
     padding: 2rem 1.8rem 2rem 2rem;
     color: $nexgen_white;
@@ -240,8 +205,8 @@ export default {
     }
 
     .icon {
-      color: #046162;
-      font-size: 1.2rem;
+      color: rgba($nexgen_black, 25%);
+      font-size: 1.5rem;
     }
   }
 }

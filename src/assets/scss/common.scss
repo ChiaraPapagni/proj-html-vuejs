@@ -10,41 +10,61 @@
     padding: 0;
 }
 
-body {
-    font-family: "Poppins",
-        Helvetica,
-        Arial,
-        sans-serif;
-    font-weight: 400;
+html {
+    scroll-behavior: smooth;
 }
 
+body {
+    font-family: $nexgen_paragraph_font;
+}
+
+h1,
 h2 {
-    font-size: 4.5rem;
-    font-weight: 900;
-    color: $nexgen_primary_blue;
+    font-family: $nexgen_title_font;
+}
+
+h3,
+h4,
+p {
+    font-family: $nexgen_paragraph_font;
+}
+
+h1 {
+    font-size: $nexgen_h1_size;
+    font-weight: $nexgen_h1_weight;
+    color: $nexgen_secondary_color;
     line-height: 5.5rem;
     margin: 0.5rem 0 1.5rem 0;
 }
 
+h2 {
+    font-size: $nexgen_h2_size;
+    font-weight: $nexgen_h2_weight;
+    color: $nexgen_secondary_color;
+    line-height: 5.5rem;
+    margin: 1rem 0;
+}
+
 h3 {
-    font-size: 3rem;
-    font-weight: 800;
+    font-size: $nexgen_h3_size;
+    font-weight: $nexgen_h3_weight;
     line-height: 5.5rem;
 }
 
 h4 {
-    font-size: 1.7rem;
-    font-weight: 700;
+    font-size: $nexgen_h4_size;
+    font-weight: $nexgen_h4_weight;
 }
 
-h5 {
-    font-size: 1.4rem;
-    font-weight: 700;
+p {
+    font-size: $nexgen_p_size;
+    font-weight: $nexgen_p_weight;
+    line-height: 1.5rem
 }
 
 .container {
-    /* width: 1560px; */
-    width: 60%;
+    /* width: 60%; */
+    width: 1140px;
     margin: auto;
 }
 
@@ -54,34 +74,34 @@ h5 {
     align-items: center;
 }
 
-.btn_green,
-.btn_green_outline {
+.btn,
+.btn_outline {
     display: inline-block;
-    padding: 0.6rem 1.5rem;
+    border: 1px solid $nexgen_primary_color;
     border-radius: 5px;
-    font-size: 1.1rem;
+    font-size: 1rem;
+    font-weight: 500;
     text-transform: uppercase;
+    padding: 0.7rem 1.5rem;
     cursor: pointer;
 }
 
-.btn_green {
-    background-color: $nexgen_primary_green;
+.btn {
+    background-color: $nexgen_primary_color;
     color: $nexgen_white;
 }
 
-.btn_green_outline {
-    border: 1px solid $nexgen_primary_green;
-    color: $nexgen_primary_green;
+.btn_outline {
+    color: $nexgen_primary_color;
 }
 
-.btn_green:hover {
+.btn:hover {
     filter: brightness(1.1);
 }
 
-.btn_green_outline:hover {
-    background-color: $nexgen_primary_green;
+.btn_outline:hover {
+    background-color: $nexgen_primary_color;
     filter: brightness(1.1);
-    border: 1px solid transparent;
     color: $nexgen_white;
 }
 
@@ -90,9 +110,9 @@ h5 {
 }
 
 .section_title {
-    color: $nexgen_primary_green;
+    color: $nexgen_primary_color;
     text-transform: uppercase;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 0.9rem;
 }
 
