@@ -43,9 +43,6 @@
           <div class="menu">
             <ul>
               <li v-for="(page, i) in pages" :key="i">
-                <!-- <router-link to="'/' + page.name">
-                  {{ page.name }}
-                </router-link> -->
                 <a :href="'#' + page.name" class="underline">
                   <span>{{ page.name }}</span>
                 </a>
@@ -58,8 +55,8 @@
       <!-- /.navbar -->
 
       <div class="consulting">
-        <p class="fusions">Fusions & acquisitions</p>
-        <h1>Insurance Consulting</h1>
+        <p class="fusions">{{ insuranceConsulting.info }}</p>
+        <h1>{{ insuranceConsulting.title }}</h1>
         <div class="form d_flex">
           <input type="text" placeholder="Name" class="input" />
           <input type="text" placeholder="Email" class="input" />
@@ -68,13 +65,9 @@
           <input type="tel" placeholder="Phone" class="input" />
           <select name="info" class="input">
             <option value selected disabled>More Info</option>
-            <option>Audit & Assurance</option>
-            <option>Financial Advisory</option>
-            <option>Analytics and M&A</option>
-            <option>Middle Marketing</option>
-            <option>Legal Consulting</option>
-            <option>Regulatory Risk</option>
-            <option>Other</option>
+            <option v-for="(info, i) in insuranceConsulting.moreInfo" :key="i">
+              {{ info }}
+            </option>
           </select>
         </div>
         <!-- /.form -->
@@ -120,6 +113,19 @@ export default {
           name: "blog",
         },
       ],
+      insuranceConsulting: {
+        info: "Fusions & acquisitions",
+        title: "Insurance Consulting",
+        moreInfo: [
+          "Audit & Assurance",
+          "Financial Advisory",
+          "Analytics and M&A",
+          "Middle Marketing",
+          "Legal Consulting",
+          "Regulatory Risk",
+          "Other",
+        ],
+      },
       scroll: false,
     };
   },
@@ -291,11 +297,26 @@ header {
         .input {
           width: 245px;
           background-color: rgba($nexgen_black, 0.1);
+          font-family: $nexgen_paragraph_font;
+        }
+
+        select {
+          appearance: none;
+          -moz-appearance: none;
+          -webkit-appearance: none;
+          background-image: url("../assets/img/chevron-down.svg");
+          background-repeat: no-repeat;
+          background-position-x: calc(100% - 1rem);
+          background-position-y: 1.1rem;
+          color: $nexgen_grey;
+
+          option {
+            color: $nexgen_dark_grey;
+          }
         }
 
         .more_info {
           font-family: "Arial";
-          color: #757575;
         }
       }
 
